@@ -23,7 +23,7 @@ This is a simple Library Management System implemented in Java. It allows users 
 
 1. **Clone the Repository**:
     ```bash
-  git clone https://github.com/234Kavya/library-management-system-incubyte-tdd.git
+    git clone https://github.com/234Kavya/library-management-system-incubyte-tdd.git
     ```
 
 2. **Navigate to the Project Directory**:
@@ -73,6 +73,6 @@ This is a simple Library Management System implemented in Java. It allows users 
   - **`LibraryTest.java`** - Tests for the `Library` class.
 
 ## Author 
-- `[Kavya Kothari](https://www.linkedin.com/in/kavya-kotharii/)`
+- [Kavya Kothari](https://www.linkedin.com/in/kavya-kotharii/)
 
 
