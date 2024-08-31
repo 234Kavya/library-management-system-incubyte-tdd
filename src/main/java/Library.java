@@ -28,4 +28,15 @@ public class Library {
         }
         return false; // Book not available or does not exist
     }
+
+    // Return a book by ISBN
+    public boolean returnBook(String isbn) {
+        for (Book book : books) {
+            if (book.getIsbn().equals(isbn) && !book.isAvailable()) {
+                book.setAvailable(true); // Mark the book as available again
+                return true; // Returning successful
+            }
+        }
+        return false; // Book was not borrowed or does not exist
+    }
 }
