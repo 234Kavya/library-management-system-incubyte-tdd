@@ -5,46 +5,45 @@ import java.util.stream.Collectors;
 public class Library {
     private List<Book> books;
 
-    //  to initialize the library with an empty book list
+
     public Library() {
         books = new ArrayList<>();
     }
 
-    // Add a new book to the library
+
     public void addBook(Book book) {
         books.add(book);
     }
 
-    // Method to get the count of books in the library
+
     public int getBooksCount() {
         return books.size();
     }
-    // Borrow book with isbn
+
     public boolean borrowBook(String isbn) {
         for (Book book : books) {
             if (book.getIsbn().equals(isbn) && book.isAvailable()) {
-                book.setAvailable(false); // Mark the book as unavailable
-                return true; // Borrowing successful
+                book.setAvailable(false);
+                return true;
             }
         }
-        return false; // Book not available or does not exist
+        return false;
     }
 
-    // Return a book by ISBN
+
     public boolean returnBook(String isbn) {
         for (Book book : books) {
             if (book.getIsbn().equals(isbn) && !book.isAvailable()) {
-                book.setAvailable(true); // Mark the book as available again
-                return true; // Returning successful
+                book.setAvailable(true);
+                return true;
             }
         }
-        return false; // Book was not borrowed or does not exist
+        return false;
     }
 
-    //View all available books
     public List<Book> viewAvailableBooks() {
         return books.stream()
-                .filter(Book::isAvailable) // Filter only available books
+                .filter(Book::isAvailable)
                 .collect(Collectors.toList());
     }
 }

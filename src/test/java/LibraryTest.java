@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class LibraryTest {
     @Test
     public void testLibraryCreation() {
-        // Create a new library instance
+
         Library library = new Library();
 
 
@@ -20,8 +20,8 @@ public class LibraryTest {
         Book book = new Book("1234567890", "Atomic Habits", "James Clear ", 2018);
 
 
-        library.addBook(book);  // Add the book to the library
-        assertEquals(1, library.getBooksCount());  // Check the count of books in the library
+        library.addBook(book);
+        assertEquals(1, library.getBooksCount());
     }
 
     @Test
@@ -30,9 +30,9 @@ public class LibraryTest {
         Book book = new Book("1234567890", "Atomic Habits", "James Clear ", 2018);
         library.addBook(book);
 
-        boolean borrowed = library.borrowBook("1234567890");  // Borrow the book by ISBN
-        assertTrue(borrowed);  // Check if borrowing was successful
-        assertFalse(book.isAvailable());  // The book should now be unavailable
+        boolean borrowed = library.borrowBook("1234567890");
+        assertTrue(borrowed);
+        assertFalse(book.isAvailable());
     }
 
     @Test
@@ -42,9 +42,9 @@ public class LibraryTest {
         library.addBook(book);
         library.borrowBook("1234567890");
 
-        boolean returned = library.returnBook("1234567890"); // Return the book by ISBN
-        assertTrue(returned);  // Check if returning was successful
-        assertTrue(book.isAvailable());  // The book should be available again
+        boolean returned = library.returnBook("1234567890");
+        assertTrue(returned);
+        assertTrue(book.isAvailable());
     }
 
     @Test
@@ -54,11 +54,11 @@ public class LibraryTest {
         Book book2 = new Book("2222222222", "Black Book", "Steven Holzner", 2000);
         library.addBook(book1);
         library.addBook(book2);
-        library.borrowBook("1111111111"); // Borrow the first book
+        library.borrowBook("1111111111");
 
         List<Book> availableBooks = library.viewAvailableBooks();
-        assertEquals(1, availableBooks.size()); // Only one book should be available
-        assertEquals("2222222222", availableBooks.get(0).getIsbn()); // The available book's ISBN should match
+        assertEquals(1, availableBooks.size());
+        assertEquals("2222222222", availableBooks.get(0).getIsbn());
     }
 
 }
