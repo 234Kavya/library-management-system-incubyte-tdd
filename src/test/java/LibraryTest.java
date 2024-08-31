@@ -9,6 +9,6 @@ public class LibraryTest {
         Library library = new Library();
 
 
-        assertEquals(0, library.getBooksCount(), "Library should be initialized with zero books");
+        assertEquals(0, library.getBooksCount());
     }
 }
