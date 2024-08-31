@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Library {
     private List<Book> books;
@@ -38,5 +39,12 @@ public class Library {
             }
         }
         return false; // Book was not borrowed or does not exist
+    }
+
+    //View all available books
+    public List<Book> viewAvailableBooks() {
+        return books.stream()
+                .filter(Book::isAvailable) // Filter only available books
+                .collect(Collectors.toList());
     }
 }
