@@ -24,9 +24,5 @@ public class Book {
 
     public void setAvailable(boolean available) { isAvailable = available; }
 
-    @Override
-    public String toString() {
-        return String.format("Book{isbn='%s', title='%s', author='%s', year=%d, available=%b}",
-                isbn, title, author, publicationYear, isAvailable);
-    }
+
 }
