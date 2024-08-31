@@ -12,6 +12,9 @@ public class Library {
 
 
     public void addBook(Book book) {
+        if (book == null || isBookExists(book.getIsbn())) {
+            throw new IllegalArgumentException("Invalid book or book already exists");
+        }
         books.add(book);
     }
 
@@ -21,22 +24,20 @@ public class Library {
     }
 
     public boolean borrowBook(String isbn) {
-        for (Book book : books) {
-            if (book.getIsbn().equals(isbn) && book.isAvailable()) {
-                book.setAvailable(false);
-                return true;
-            }
+        Book book = findBookByIsbn(isbn);
+        if (book != null && book.isAvailable()) {
+            book.setAvailable(false);
+            return true;
         }
         return false;
     }
 
 
     public boolean returnBook(String isbn) {
-        for (Book book : books) {
-            if (book.getIsbn().equals(isbn) && !book.isAvailable()) {
-                book.setAvailable(true);
-                return true;
-            }
+        Book book = findBookByIsbn(isbn);
+        if (book != null && !book.isAvailable()) {
+            book.setAvailable(true);
+            return true;
         }
         return false;
     }
@@ -46,4 +47,18 @@ public class Library {
                 .filter(Book::isAvailable)
                 .collect(Collectors.toList());
     }
+
+    private boolean isBookExists(String isbn) {
+        return findBookByIsbn(isbn) != null;
+    }
+
+    private Book findBookByIsbn(String isbn) {
+        for (Book book : books) {
+            if (book.getIsbn().equals(isbn)) {
+                return book;
+            }
+        }
+        return null;
+    }
+
 }
