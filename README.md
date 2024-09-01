@@ -47,7 +47,7 @@ This is a simple Library Management System implemented in Java. It allows users 
 ### Running the Application
 
 - **Compile and Run**:
-    After building the project, you can compile and run the main application. Create a `Main.java` class if you need a main entry point.
+    After building the project, you can compile and run the main application. 
 
 - **Run Tests**:
     To ensure that everything works as expected, run the tests:
