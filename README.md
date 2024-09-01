@@ -72,6 +72,14 @@ This is a simple Library Management System implemented in Java. It allows users 
   - **`BookTest.java`** - Tests for the `Book` class.
   - **`LibraryTest.java`** - Tests for the `Library` class.
 
+## Test Coverage
+
+Below is the test coverage report for the project:
+<img width="581" alt="image" src="https://github.com/user-attachments/assets/b01624dd-be07-4c3d-8ae8-991b99064e58">
+# 
+<img width="388" alt="image" src="https://github.com/user-attachments/assets/f4df0e3f-c7af-4b14-bf7a-841e4050647a">
+
+
 ## Author 
 - [Kavya Kothari](https://www.linkedin.com/in/kavya-kotharii/)
 
