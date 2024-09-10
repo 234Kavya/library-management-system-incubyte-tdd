@@ -7,6 +7,11 @@ public class Book {
 
 
     public Book(String isbn, String title, String author, int publicationYear) {
+
+        if (isbn == null || isbn.length() != 13) {
+            throw new IllegalArgumentException("ISBN must be exactly 13 characters length");
+        }
+
         this.isbn = isbn;
         this.title = title;
         this.author = author;
