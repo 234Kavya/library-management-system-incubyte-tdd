@@ -7,7 +7,7 @@ public class BookTest {
     @Test
     public void testBookCreation() {
 
-        Book book = new Book("1234567890", "Test Book", "Author Name", 2024);
+        Book book = new Book("1234567891234", "Test Book", "Author Name", 2024);
 
 
         assertEquals("1234567890", book.getIsbn());
@@ -15,5 +15,10 @@ public class BookTest {
         assertEquals("Author Name", book.getAuthor());
         assertEquals(2024, book.getPublicationYear());
         assertTrue(book.isAvailable());
+    }
+
+   @Test(expected = IndexOutOfBoundsException.class)
+    public void testIsbnLength(){
+       new Book("11111111111111", "Test Book", "Author Name", 2024);
     }
 }
